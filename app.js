@@ -18,7 +18,7 @@ const buscarLugar = () => {
     return;
   }
 
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`)
     .then(response => response.json())
     .then(data => {
 
@@ -31,30 +31,29 @@ const buscarLugar = () => {
 
       notFound.style.display = 'none';
 
-      console.log(data.weather[0].main)
       switch (data.weather[0].main) {
         case 'Clear':
-          imageWeather.src = './src/sun-with-rays.svg';
+          imageWeather.src = 'src/sun-with-rays.svg';
           description.innerHTML = `Despejado`;
           break;
 
         case 'Rain':
-          imageWeather.src = './src/cloud-with-rain.svg';
+          imageWeather.src = 'src/cloud-with-rain.svg';
           description.innerHTML = `Lluvia`;
           break;
 
         case 'Snow':
-          imageWeather.src = './src/cloud-with-snow.svg';
+          imageWeather.src = 'src/cloud-with-snow.svg';
           description.innerHTML = `Nieve`;
           break;
 
         case 'Clouds':
-          imageWeather.src = './src/cloud.svg';
+          imageWeather.src = 'src/cloud.svg';
           description.innerHTML = `Nublado`;
           break;
         
         case 'Mist':
-          imageWeather.src = './src/extreme-haze.svg';
+          imageWeather.src = 'src/extreme-haze.svg';
           description.innerHTML = `Neblina`;
           break;
         
@@ -76,7 +75,6 @@ const buscarLugar = () => {
 searchBox.addEventListener("keydown", function(event) {
   if (event.keyCode === 13) {
     buscarLugar();
-    console.log("Se presionó Enter");
   }
 });
 
