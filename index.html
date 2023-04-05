@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather APP</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  
+  <body class="bg-[#232946] text-[#232946] h-screen flex justify-center items-center">
+    <div
+      id="container"
+      class="w-[25rem] min-h-[6.25rem] p-8 bg-[#b8c1ec] rounded-xl"
+    >
+      <div id="searchBox" class="flex items-center justify-center gap-1">
+        <span class="p-1 material-icons"> place </span>
+        <input
+          id="input"
+          type="text"
+          placeholder="Ingresa tu ubicación"
+          class="w-full p-1 bg-[#b8c1ec] uppercase font-semibold focus:outline-none" 
+        />
+        <button class="flex items-center justify-center">
+          <span class="p-1 rounded-full material-icons bg-[#eebbc3] border-[.0625rem] border-[#232946]">
+            search
+          </span>
+        </button>
+      </div>
+
+      <div id="notFound" class="hidden text-center mt-14">
+        <img
+          src="./src/location-not-found.svg"
+          alt="No location found"
+          class="w-full"
+        />
+        <p class="mt-3 font-semibold">No se encontró la ubicación!</p>
+      </div>
+
+      <div id="weatherBox" class="hidden mt-14">
+        <div class="flex flex-col items-center justify-center">
+          <img src="" id="imageWeather" class="max-h-[12.5rem] mb-8" />
+          <p id="temperature"></p>
+          <p id="termica"></p>
+          <p id="description"></p>
+        </div>
+      </div>
+
+      <div id="weatherDetails" class="justify-around hidden w-full mt-14">
+        <div class="flex">
+          <span class="material-icons"> water </span>
+          <div class="flex gap-2">
+            <p class="ml-2">Humedad</p>
+            <span id="humidity"></span>
+          </div>
+        </div>
+
+        <div class="flex">
+          <span class="material-icons"> air </span>
+          <div class="flex gap-2">
+            <p class="ml-2">Viento</p>
+            <span id="wind"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
